@@ -5,8 +5,8 @@ const UserList = props => (
 	<div>
 
 		{
-			props.users.map(user => (
-				<div>
+			props.users.map((user,i) => (
+				<div key={i}>
 					<Link href={`/user?name=${user.username}`} as={`/@/${user.username}`}>
 						<a
 							onMouseEnter={() => { Router.prefetch(`/user?name=${user.username}`); console.log('prefetching..')}}
